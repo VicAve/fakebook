@@ -1,46 +1,184 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Fake Facebook</title>
+	<title>Fakebook</title>
+	<link rel="stylesheet" type="text/css" href="style-index.css">
+	<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
 <html>      
 	<header>
-    	<img src="/media/thumbs/Victor.gif" heigth="60" width="60" style="display:inline; margin: 0 1rem;"/><p style="display:inline;">Victor Hernandez</p>
-    	<input type="text" name="search" placeholder="Search..." style="margin-left: 20%;width: 20%;height: 1.6rem">
-    	<nav style="float: right;">
-	    	<a href="#">Home</a>
-	    	<a href="messages.html">Messages</a>
-	    	<a href="login.html">Exit</a>
-    	</nav>
+		<div class="menu-container left">
+			<span class="icon-th-list icon"></span>
+			<a href="#">Home</a>
+		</div>
+		<div id="search-box">
+			<!--<form action="http://irock.enroute.xyz:4000/search/" method="POST" >-->
+	    	<form id="search" action="http://irock.enroute.xyz:4000/search/" method="POST">
+	    	<input type="text" name="name" placeholder="Search...">
+	    	</form>
+			<span id="search-icon" class="icon-search right" onclick="search()"></span>
+		</div>
+    	<div id="config-menu" class="right">
+    		<span class="icon-cog icon"></span>
+    	</div>
+    	<div class="menu-container right">
+    		<a href="#">Victor Hernandez</a><img src="media/thumbs/Victor.gif">
+	    	<span class="icon-bell icon"><div id="noNot"></div></span><!-- Check for notifications -->
+    	</div>
+    	
     </header>
-	<section id="wall" style="width: 68%; height: 100%; position: fixed;right: 0;display: inline-block;left:0">
-		<article>
-			<img src="">
-			<h3 class="wallFriendName">Rodolfo</h3>
+    <section id="status-bar">
+    	<div id="messenger" class="container-status-bar">
+			<span><span class="icon-comments"></span>
+			<p>Messenger</p></span>
+    	</div>
+    	<div id="messenger" class="container-status-bar">
+			<span><span class="icon-columns"></span>
+			<p>News Feed</p></span>
+    	</div>
+
+    	<div id="status-space" class="container-status-bar">
+    		<div id="status">
+		    	<form id="update-status" action="" method="POST">
+		    		<input type="text" name="name" placeholder="What are you up to ...">
+		    	</form>
+				<span id="status-send-btn" onclick="">Send</span>
+				<span class="icon-camera"></span>
+				<span class="icon-video-camera"></span>
+				<span class="icon-image"></span>
+			</div>
+    	</div>
+
+    	<div id="my-pages" class="container-status-bar">
+    		<span><span class="icon-paste"></span>
+			<p>My Pages</p></span>
+    	</div>
+    </section>
+	<section id="wall" >
+		
+		<article class="news-post">
+			<img src="media/thumbs/John.gif">
+			<h3>John Doe</h3>
+			<p class="description-post">Posted a Text</p>
+			<p class="time-post">5 minutes ago</p>
+			<div class="text-post">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+			</div>
+			<div class="comment-post">
+				<form id="update-status" action="" method="POST">
+		    		<input type="text" name="name" placeholder="Leave a comment...">
+		    	</form>
+				<span id="comment-wall-btn" >Comment</span>
+			</div>
 		</article>
-		<article>
-			<img src="">
-			<h3 class="wallFriendName">Carla</h3>
+		<article class="news-post">
+			<img src="media/thumbs/Carla.gif">
+			<h3>Carla</h3>
+			<p class="description-post">Posted an Image</p>
+			<p class="time-post">10 minutes ago</p>
+			<div class="text-post">
+			<div class="img-post-news"><img src="media/img/data-doesnt-sleep-night.png"></div>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+			</div>
+			<div class="comment-post">
+				<form id="update-status" action="" method="POST">
+		    		<input type="text" name="name" placeholder="Leave a comment...">
+		    	</form>
+				<span id="comment-wall-btn" >Comment</span>
+			</div>
+		</article>
+		<article class="news-post">
+			<img src="media/thumbs/Diego.gif">
+			<h3>Diego Maluma</h3>
+			<p class="description-post">Posted an Image</p>
+			<p class="time-post">1 hour ago</p>
+			<div class="text-post">
+			<div class="img-post-news"><img src="media/img/data-doesnt-sleep-night.png"></div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+			</div>
+			<div class="comment-post">
+				<form id="update-status" action="" method="POST">
+		    		<input type="text" name="name" placeholder="Leave a comment...">
+		    	</form>
+				<span id="comment-wall-btn" >Comment</span>
+			</div>
 		</article>
 	</section>
-	<aside style="border-left: solid 2px grey; width: 30%; height: 100%; position: fixed;right: 0;display: inline-block;">
+	<aside id="contacts-pane">
 		<div class="contactAside">
-			<img src="https://s-media-cache-ak0.pinimg.com/736x/c1/59/0e/c1590eb5347a30d97d49099b2a1b8365.jpg" heigth="60" width="60">
-			<h3 class="chatFriendName" style="display: inline-block;">Carla Ramirez</h3>
+			<img src="media/thumbs/Carla.gif">
+			<a href="#" class="chatFriendName" >Carla Ramirez</a>
+			<div class="contact-indicator"></div>
 		</div>
-		<div class="contactAside"></div>
-			<img src="https://s-media-cache-ak0.pinimg.com/736x/c1/59/0e/c1590eb5347a30d97d49099b2a1b8365.jpg" heigth="60" width="60">
-			<h3 class="chatFriendName" style="display: inline-block;">Sofia Gonzales</h3>
-		<div class="contactAside"></div>
-			<img src="https://s-media-cache-ak0.pinimg.com/736x/c1/59/0e/c1590eb5347a30d97d49099b2a1b8365.jpg" heigth="60" width="60">
-			<h3 class="chatFriendName" style="display: inline-block;">Reyna Barnad</h3>
-		<div class="contactAside"></div>
-			<img src="https://s-media-cache-ak0.pinimg.com/736x/c1/59/0e/c1590eb5347a30d97d49099b2a1b8365.jpg" heigth="60" width="60">
-			<h3 class="chatFriendName" style="display: inline-block;">Reyna Barnad</h3>
-		<div class="contactAside"></div>
+		<div class="contactAside">
+			<img src="media/thumbs/Diego.gif">
+			<a href="#" class="chatFriendName" >Diego Maluma</a>
+			<div class="contact-indicator"></div>
+		</div>
+		<div class="contactAside">
+			<img src="media/thumbs/Charlie.gif">
+			<a href="#" class="chatFriendName" >Carlos Sheen</a>
+			<div class="contact-indicator"></div>
+		</div>
+		<div class="contactAside">
+			<img src="media/thumbs/Carolina.gif">
+			<a href="#" class="chatFriendName" >Carolina Gutierrez</a>
+			<div class="contact-indicator"></div>
+		</div>
+		<div class="contactAside">
+			<img src="media/thumbs/Jackeline.gif">
+			<a href="#" class="chatFriendName" >Jackeline Sosa</a>
+			<div class="contact-indicator"></div>
+		</div>
+		<div class="contactAside">
+			<img src="media/thumbs/Sebastian.gif">
+			<a href="#" class="chatFriendName" >Sebastian Cardona</a>
+			<div class="contact-indicator"></div>
+		</div>
+		<div class="contactAside">
+			<img src="media/thumbs/Sofia.gif">
+			<a href="#" class="chatFriendName" >Sofia Arreola</a>
+			<div class="contact-indicator"></div>
+		</div>
+		<div class="contactAside">
+			<img src="media/thumbs/Carla.gif">
+			<a href="#" class="chatFriendName" >Carla Ramirez</a>
+			<div class="contact-indicator"></div>
+		</div>
+		<div class="contactAside">
+			<img src="media/thumbs/Diego.gif">
+			<a href="#" class="chatFriendName" >Diego Maluma</a>
+			<div class="contact-indicator"></div>
+		</div>
+		<div class="contactAside">
+			<img src="media/thumbs/Charlie.gif">
+			<a href="#" class="chatFriendName" >Carlos Sheen</a>
+			<div class="contact-indicator"></div>
+		</div>
+		<div class="contactAside">
+			<img src="media/thumbs/Carolina.gif">
+			<a href="#" class="chatFriendName" >Carolina Gutierrez</a>
+			<div class="contact-indicator"></div>
+		</div>
+		<div class="contactAside">
+			<img src="media/thumbs/Jackeline.gif">
+			<a href="#" class="chatFriendName" >Jackeline Sosa</a>
+			<div class="contact-indicator"></div>
+		</div>
+		<div class="contactAside">
+			<img src="media/thumbs/Sebastian.gif">
+			<a href="#" class="chatFriendName" >Sebastian Cardona</a>
+			<div class="contact-indicator"></div>
+		</div>
+		<div class="contactAside">
+			<img src="media/thumbs/Sofia.gif">
+			<a href="#" class="chatFriendName" >Sofia Arreola</a>
+			<div class="contact-indicator"></div>
+		</div>
+
 	</aside>
 
 
